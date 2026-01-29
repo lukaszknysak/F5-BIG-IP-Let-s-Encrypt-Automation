@@ -147,19 +147,12 @@ Od tego momentu **nie musisz robić nic więcej**. Gdy skrypt odnowi certyfikat 
 
 **6\. Rozwiązywanie Problemów (Troubleshooting)**
 
-| Problem | Diagnoza | Rozwiązanie |
-| :---- | :---- | :---- |
-| **RDP w APM nie pobiera się** | Prawdopodobnie używasz certyfikatu ECC (domyślnego) zamiast RSA. | Wykonaj: install (aby wgrać config RSA), potem reset-certs i issue. Sprawdź w GUI czy certyfikat ma algorytm RSA. |
-| **Błąd walidacji (404/Connection Refused)** | iRule nie działa lub VS jest niedostępny. | Sprawdź show-irule. Upewnij się, że port 80 jest otwarty na firewallu dla świata. |
-| **Błąd "Is a directory"** | Stary błąd skryptu v1. | Uruchom install (v5 automatycznie to naprawia). |
-| **Brak TLS 1.3** | Stara wersja TMOS lub profil. | Upewnij się, że masz TMOS v14+. Uruchom update-profiles. |
-
 ### **Przydatne polecenia diagnostyczne**
 
 **Podgląd logów:**
 
 ```bash
-tail \-f /var/log/letsencrypt.log
+tail -f /var/log/letsencrypt.log
 ```
 
 **Sprawdzenie iRule:**
