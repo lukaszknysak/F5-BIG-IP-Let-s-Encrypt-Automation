@@ -179,3 +179,21 @@ tmsh list sys icall handler periodic letse\_renew\_handler
 | reset-certs | Usuwa pliki z dysku. | **Uwaga:** Wymaga ponownego issue. |
 | show-irule | Wyświetla kod iRule. | Tylko odczyt. |
 
+## ---
+
+**8\. Krótka instrukcja "Hybrid Mode" (RSA + ECC)**
+Mając teraz dwa skrypty (f5-letsencrypt-rsa.sh i f5-letsencrypt-ecc.sh), możesz używać ich razem.
+
+Dla APM/RDP (Krytyczne): Użyj profili wygenerowanych przez skrypt RSA (nazwy cssl_domena_pl).
+
+Dla zwykłych stron WWW: Użyj profili ECC (nazwy cssl_ecc_domena_pl), ponieważ są szybsze dla urządzeń mobilnych.
+
+Hybrid (Advanced): Możesz ręcznie stworzyć profil Client-SSL, który w cert-key-chain ma obie pary kluczy (jedną z RSA, drugą z ECC). F5 automatycznie wybierze odpowiedni certyfikat w zależności od tego, co obsłuży przeglądarka klienta.
+
+Aby zainstalować wersję ECC bez psucia RSA:
+
+```bash
+chmod +x f5-letsencrypt-ecc.sh
+./f5-letsencrypt-ecc.sh install
+./f5-letsencrypt-ecc.sh issue
+```
