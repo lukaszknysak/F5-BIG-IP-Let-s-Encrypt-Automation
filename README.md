@@ -32,34 +32,34 @@ Przed uruchomieniem skryptu upewnij się, że spełnione są następujące warun
 
 Umieść skrypt f5-letsencrypt-rsa.sh w katalogu /shared/letsencrypt/ i nadaj mu uprawnienia:
 
-Bash
-
+```bash
 chmod \+x /shared/letsencrypt/f5-letsencrypt-rsa.sh
+```
 
 ### **Krok 2: Konfiguracja domen**
 
 Edytuj skrypt, aby zdefiniować listę obsługiwanych domen:
 
-Bash
-
+```bash
 nano /shared/letsencrypt/f5-letsencrypt-rsa.sh
+```
 
 Znajdź sekcję DOMAINS i wprowadź swoje wpisy:
 
-Bash
-
+```bash
 readonly DOMAINS=(  
     "vpn.twoja-firma.pl"  
     "poczta.twoja-firma.pl"  
 )
+```
 
 ### **Krok 3: Inicjalizacja środowiska (install)**
 
 To polecenie przygotowuje grunt pod działanie automatyzacji.
 
-Bash
-
+```bash
 ./f5-letsencrypt-rsa.sh install
+```
 
 **Co robi ta komenda?**
 
@@ -81,9 +81,9 @@ Bash
 
 To jest główna komenda operacyjna. Uruchom ją po instalacji lub dodaniu nowej domeny.
 
-Bash
-
+```bash
 ./f5-letsencrypt-rsa.sh issue
+```
 
 **Proces działania:**
 
@@ -100,9 +100,9 @@ Bash
 
 Użyj tej opcji, jeśli masz już ważne certyfikaty, ale chcesz zmienić ustawienia bezpieczeństwa (np. włączyć TLS 1.3 na istniejących profilach).
 
-Bash
-
+```bash
 ./f5-letsencrypt-rsa.sh update-profiles
+```
 
 **Działanie:**
 
@@ -115,9 +115,9 @@ Bash
 
 Krytyczna opcja przy migracji lub naprawie błędów.
 
-Bash
-
+```bash
 ./f5-letsencrypt-rsa.sh reset-certs
+```
 
 **Kiedy stosować?**
 
@@ -158,21 +158,21 @@ Od tego momentu **nie musisz robić nic więcej**. Gdy skrypt odnowi certyfikat 
 
 **Podgląd logów:**
 
-Bash
-
+```bash
 tail \-f /var/log/letsencrypt.log
+```
 
 **Sprawdzenie iRule:**
 
-Bash
-
+```bash
 ./f5-letsencrypt-rsa.sh show-irule
+```
 
 **Sprawdzenie harmonogramu automatyzacji:**
 
-Bash
-
+```bash
 tmsh list sys icall handler periodic letse\_renew\_handler
+```
 
 ## ---
 
