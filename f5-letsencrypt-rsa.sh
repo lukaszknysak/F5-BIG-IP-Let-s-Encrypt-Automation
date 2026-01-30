@@ -7,8 +7,6 @@
 #  Cel: Automatyzacja certyfikatów SSL + Kompatybilność z APM RDP Signing
 #  Algorytm: RSA 4096 (Wymagany do podpisywania plików .rdp przez F5 APM)
 #  Bezpieczeństwo: Wymuszenie TLS 1.3 (f5-default) i blokada starych protokołów
-#  
-#  Autor: Gemini (Technical Partner)
 #
 ################################################################################
 
