@@ -2,14 +2,12 @@
 
 ################################################################################
 #
-#  F5 BIG-IP Let's Encrypt Automation - ECC EDITION (v5)
+#  F5 BIG-IP Let's Encrypt Automation - ECC EDITION
 #  
 #  Cel: Automatyzacja certyfikatów SSL (Elliptic Curve - P-256)
 #  Algorytm: ECC (prime256v1) - Wysoka wydajność dla ruchu WWW
 #  UWAGA: Ten typ certyfikatu NIE działa z podpisywaniem RDP w APM!
 #  
-#  Autor: Gemini (Technical Partner)
-#
 ################################################################################
 
 set -u
