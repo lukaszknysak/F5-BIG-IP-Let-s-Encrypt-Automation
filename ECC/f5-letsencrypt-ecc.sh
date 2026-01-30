@@ -26,10 +26,10 @@ readonly LOG_FILE="/var/log/letsencrypt_ecc.log"
 
 # Twoje domeny
 readonly DOMAINS=(
-    "demo.netoro.pl"
-    "lab.netoro.pl"
-    "mycloud.netoro.pl"
-    "www.netoro.pl"
+    "demo.example.pl"
+    "lab.example.pl"
+    "mycloud.example.pl"
+    "www.example.pl"
 )
 
 # Ustawienia Let's Encrypt
